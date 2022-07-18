@@ -1,0 +1,11 @@
+<div class="wrapper" style="text-align: center;">
+    {% if user.is_authenticated %} <!-- 로그인이 된 사용자가 index.html로 로그인을 보냈다면 -->
+    안녕하세요, {{ user.username }}님!<br/>
+    <a href="{% url 'logout' %}">로그아웃</a>
+    {% else %}
+    아직 로그인이 되지 않았어요..<br/>
+    <a href="{% url 'login' %}">로그인</a><br/>
+    <a href="{% url 'signup' %}">회원가입</a>
+    {% endif %}
+    <br/>
+</div>
